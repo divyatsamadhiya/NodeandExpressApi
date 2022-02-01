@@ -22,6 +22,24 @@ app.get("/api/product/:productName", (req, res) => {
   });
 });
 
+app.put("/api/updateProduct/:productName", (req, res) => {
+  Product.findOneAndUpdate(
+    { name: req.params.productName },
+    req.body,
+    function (err, updatedProduct) {
+      if (err) return console.err(err);
+      res.status(201).json({ updatedProduct });
+    }
+  );
+});
+
+app.delete("/api/removeProduct/:productName", (req, res) => {
+  Product.deleteOne({ name: req.params.productName }, function (err, data) {
+    if (err) return console.err(err);
+    res.status(204).json({ data });
+  });
+});
+
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
