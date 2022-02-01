@@ -9,7 +9,17 @@ app.use(express.json());
 
 app.post("/api/createProduct", (req, res) => {
   const product = new Product(req.body);
-  res.status(201).json({ product });
+  product.save(function (err, product) {
+    if (err) return console.err(err);
+    res.status(201).json({ product });
+  });
+});
+
+app.get("/api/product/:productName", (req, res) => {
+  Product.findOne({ name: req.params.productName }, function (err, product) {
+    if (err) return console.err(err);
+    res.status(200).json({ product });
+  });
 });
 
 const start = async () => {

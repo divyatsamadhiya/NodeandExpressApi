@@ -10,7 +10,7 @@ const ProductsSchema = new mongoose.Schema({
     maxlength: 50,
   },
   listing_Date: {
-    type: Date,
+    type: String,
     required: true,
   },
   quantity: {
