@@ -9,6 +9,7 @@ const {
     deleteProduct,
 } = require("../controller/route_controller");
 
+//one way is to write the routes is like below syntax but we can also setup routeController to more simplify the router code.
 // router.get("/", (req, res) => {
 //   Product.find({}, function (err, product) {
 //     if (err) console.err(err);
