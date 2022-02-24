@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Product = require("../productSchema");
+const Product = require("../model/productSchema");
 const {
     getProducts,
     createProduct,
@@ -8,6 +8,7 @@ const {
     updateProduct,
     deleteProduct,
 } = require("../controller/route_controller");
+const jwtAuth = require("../jwtMiddleware");
 
 //one way is to write the routes is like below syntax but we can also setup routeController to more simplify the router code.
 // router.get("/", (req, res) => {
@@ -17,7 +18,7 @@ const {
 //   });
 // });
 
-router.route("/").get(getProducts).post(createProduct);
+router.route("/").get(jwtAuth, getProducts).post(createProduct);
 router
     .route("/:productName")
     .get(getProductByName)

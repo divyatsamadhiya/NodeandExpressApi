@@ -1,4 +1,4 @@
-const Product = require("../productSchema");
+const Product = require("../model/productSchema");
 
 //callback function approach for talking with db
 const getProducts = (req, res) => {

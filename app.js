@@ -3,11 +3,15 @@ const app = express();
 require("dotenv").config();
 const mongoose = require("mongoose");
 const connectDB = require("./db");
-const Product = require("./productSchema");
+const Product = require("./model/productSchema");
 const router = require("./route/routes");
+const userRouter = require("./route/userRoutes");
+const jwtAuth = require("./jwtMiddleware");
 
+//middleware
 app.use(express.json());
 app.use("/api/v1/products", router);
+app.use("/api/v1", userRouter);
 
 //routes - you can directly write all routes in this file without using router and routeController file but that can complicate the code so it's always better to use router and routeController to simplify the code.
 

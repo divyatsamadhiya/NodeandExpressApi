@@ -1,27 +1,30 @@
 {
-  "name": "nodeapi",
-  "version": "1.0.0",
-  "description": "My first Api",
-  "main": "app.js",
-  "dependencies": {
-    "dotenv": "^15.0.0",
-    "express": "^4.17.2",
-    "mongoose": "^6.1.9"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "scripts": {
-    "start": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/divyatsamadhiya/NodeandExpressApi.git"
-  },
-  "author": "Divyat Samadhiya",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/divyatsamadhiya/NodeandExpressApi/issues"
-  },
-  "homepage": "https://github.com/divyatsamadhiya/NodeandExpressApi#readme"
+    "name": "nodeapi",
+    "version": "1.0.0",
+    "description": "My first Api",
+    "main": "app.js",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^15.0.0",
+        "express": "^4.17.2",
+        "joi": "^17.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.1.9"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    },
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/divyatsamadhiya/NodeandExpressApi.git"
+    },
+    "author": "Divyat Samadhiya",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/divyatsamadhiya/NodeandExpressApi/issues"
+    },
+    "homepage": "https://github.com/divyatsamadhiya/NodeandExpressApi#readme"
 }
