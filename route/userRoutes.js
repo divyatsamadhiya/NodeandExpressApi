@@ -54,9 +54,11 @@ router.post("/login", async (req, res) => {
             .json({ status: "Login Failed", msg: "Incorrect password" });
 
     //using jsonwebtoken module to sign secret_token along with userid and then setting it in header for every request
-    const token = jwt.sign({ _id: user._id }, process.env.SECRET_TOKEN);
+    const token = jwt.sign({ _id: user._id }, process.env.SECRET_TOKEN, {
+        expiresIn: "20s",
+    });
     res.header("auth-token", token);
-    res.send(token);
+    res.json({ jwtToken: token });
 });
 
 module.exports = router;

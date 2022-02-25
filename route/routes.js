@@ -10,6 +10,7 @@ const {
 } = require("../controller/route_controller");
 const jwtAuth = require("../jwtMiddleware");
 
+router.use(jwtAuth);
 //one way is to write the routes is like below syntax but we can also setup routeController to more simplify the router code.
 // router.get("/", (req, res) => {
 //   Product.find({}, function (err, product) {
@@ -18,7 +19,7 @@ const jwtAuth = require("../jwtMiddleware");
 //   });
 // });
 
-router.route("/").get(jwtAuth, getProducts).post(createProduct);
+router.route("/").get(getProducts).post(createProduct);
 router
     .route("/:productName")
     .get(getProductByName)
